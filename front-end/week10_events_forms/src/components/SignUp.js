@@ -7,19 +7,19 @@ export default function SignUp(){
     var lastnameRef = useRef()
 
     const handleSubmit = (e) => {
+        e.preventDefault()
         const data = {
             fnm: firstnameRef.current.value,
             lnm: lastnameRef.current.value
         }
-
         console.log(data)
     }
     return(
         <div>
             <h1>SignUp</h1>
             <form onSubmit={handleSubmit}>
-                First Name: <input type='text' ref={firstnameRef} placeholder='Enter first name'/> <br/>
-                Last Name: <input type='text' ref={lastnameRef} placeholder='Enter last name'/> <br/>
+                First Name: <input type='text' ref={firstnameRef} placeholder='Enter first name'/><br/>
+                Last Name: <input type='text' ref={lastnameRef} placeholder='Enter last name'/><br/>            
                 <input type='submit' value='Sign UP'/>
             </form>
         </div>
